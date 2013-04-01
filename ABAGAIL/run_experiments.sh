@@ -4,93 +4,15 @@ set -e
 # Compile
 ant
 
-# Tests for different number of attributes (outputs with error).
-# java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest >> 'WDBC_Test_1_final.csv' # 30 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest2 >> 'WDBC_Test_2_final.csv' # 10 attributes
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3_final.csv' # 20 attributes.
-#java -cp ABAGAIL.jar opt.test.WDBCTest3 >> 'WDBC_Test_3.csv' # 20 attributes.
+# Runs ICA on Breast Cancer Dataset
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/wdbc.txt' 1 30 569 >> '/home/qk/Projects/machine_learning_p3/Data/Breast_Cancer_Dataset/ica_1_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/wdbc.txt' 3 30 569 >> '/home/qk/Projects/machine_learning_p3/Data/Breast_Cancer_Dataset/ica_3_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/wdbc.txt' 5 30 569 >> '/home/qk/Projects/machine_learning_p3/Data/Breast_Cancer_Dataset/ica_5_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/wdbc.txt' 10 30 569 >> '/home/qk/Projects/machine_learning_p3/Data/Breast_Cancer_Dataset/ica_10_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/wdbc.txt' 15 30 569 >> '/home/qk/Projects/machine_learning_p3/Data/Breast_Cancer_Dataset/ica_15_reduced.arff'
 
-# Tests for SA, Modify cooling.
-#java -cp ABAGAIL.jar opt.test.WDBCTest4 >> 'WDBC_Test_4.csv' # 30 attributes.
-
-# Tests for GA, Modify population size.
-#java -cp ABAGAIL.jar opt.test.WDBCTest5 >> 'WDBC_Test_5.csv' # 30 attributes.
-
-# Travelling Salesman Problem (15 times to obtain average).
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-# java -cp ABAGAIL.jar opt.test.TravelingSalesmanTest >> 'TSP_Test.csv'
-
-# Knapsack Problem (15 times to obtain average).
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test_2.csv' // This is to get the max value, did it once.
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-#java -cp ABAGAIL.jar opt.test.KnapsackTest >> 'Knapsack_Test.csv'
-
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
-java -cp ABAGAIL.jar opt.test.ContinuousPeaksTest >> 'ContinuousPeaks_Test.csv'
+# Runs ICA on Mammographic Masses Dataset
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/mm.txt' 1 5 961 >> '/home/qk/Projects/machine_learning_p3/Data/Mammographic_Masses_Dataset/ica_1_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/mm.txt' 2 5 961 >> '/home/qk/Projects/machine_learning_p3/Data/Mammographic_Masses_Dataset/ica_2_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/mm.txt' 3 5 961 >> '/home/qk/Projects/machine_learning_p3/Data/Mammographic_Masses_Dataset/ica_3_reduced.arff'
+java -cp ABAGAIL.jar shared.test.IndependentComponentAnalysisTest 'src/datasets/mm.txt' 4 5 961 >> '/home/qk/Projects/machine_learning_p3/Data/Mammographic_Masses_Dataset/ica_4_reduced.arff'

@@ -115,7 +115,7 @@ public class DataSet {
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        String result = "Description:\n" + description + "\n";
+        String result = "";
         for (int i = 0; i < instances.length; i++) {
             result += instances[i] + "\n";
         }
